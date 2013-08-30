@@ -1,9 +1,10 @@
 /*
- *  Saras sidebar toggle - v1.0
+ *  Saras sidebar toggle - v1.0.1
  *
- *  Made by Tirta Nugraha
+ *  Made by nugrata
  *  This plugin is the part of saras admin template
  *  plugin licensed under MIT License
+ *  https://github.com/nugrata/saras-sidebar
  */
 
 // the semi-colon before function invocation is a safety net against concatenated
@@ -120,20 +121,24 @@
 			sa_variables._self.on('mouseleave', function(){
 				sa_variables.left_panel.css({
 					'left': -sa_variables.gap,
+					'box-shadow': 'none',
+					'opacity': .75,
 					'z-index': 2
 				});
 
-				sa_variables.right_panel.css('left', 0);
+				//sa_variables.right_panel.css('left', 0);
 			});
 
 			sa_variables._self.on('mouseenter', function() {
-				var peek = 15;
+				var peek = 12;
 				//slide right panel position a bit
-				sa_variables.right_panel.css('left', peek);
+				//sa_variables.right_panel.css('left', peek);
 
 				//slide left panel position a bit
 				sa_variables.left_panel.css({
 					'left': -sa_variables.gap + peek,
+					'box-shadow': '0px 0px 15px black',
+					'opacity': .75,
 					'z-index': 2
 				});
 			});
