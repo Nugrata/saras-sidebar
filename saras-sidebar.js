@@ -1,5 +1,5 @@
 /*
- *  Saras sidebar toggle - v1.0.1
+ *  Saras sidebar toggle - v1.0.2
  *
  *  Made by nugrata
  *  This plugin is the part of saras admin template
@@ -126,13 +126,13 @@
 					'z-index': 2
 				});
 
-				//sa_variables.right_panel.css('left', 0);
+				sa_variables.right_panel.css('left', 0);
 			});
 
 			sa_variables._self.on('mouseenter', function() {
 				var peek = 12;
 				//slide right panel position a bit
-				//sa_variables.right_panel.css('left', peek);
+				sa_variables.right_panel.css('left', peek);
 
 				//slide left panel position a bit
 				sa_variables.left_panel.css({
