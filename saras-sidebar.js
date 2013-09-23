@@ -1,5 +1,5 @@
 /*
- *  Saras sidebar toggle - v1.0.2
+ *  Saras sidebar toggle - v1.0.3
  *
  *  Made by nugrata
  *  This plugin is the part of saras admin template
@@ -32,7 +32,7 @@
 		body_content = $("#sa_body"),
 		sa_variables = {
 			_self: null,
-			overlay: null,
+			overlay: '',
 			gap: body_content.find(".sa_leftpanel").width(),
 			left_panel: body_content.find(".sa_leftpanel"),
 			right_panel: body_content.find(".sa_rightpanel, .sa_topnav")
@@ -60,6 +60,16 @@
 			if (_setting.overlay === true) {
 				//adding html (overlay) element to page
 				sa_variables.right_panel.prepend("<div class=\"dim\"></div>");
+				sa_variables.overlay = $("#sa_rightpanel").find(".dim");
+			} else if (_setting.overlay === false) {
+				var overlay; 
+				sa_variables.right_panel.prepend("<div class=\"dim\"></div>");
+				overlay = $("#sa_rightpanel").find(".dim");
+				overlay.css({
+					 "-ms-filter": "\"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\"",
+					 "filter": "alpha(opacity=0)",
+					 "opacity": 0
+				});
 				sa_variables.overlay = $("#sa_rightpanel").find(".dim");
 			}
 
@@ -130,7 +140,7 @@
 			});
 
 			sa_variables._self.on('mouseenter', function() {
-				var peek = 12;
+				var peek = 15;
 				//slide right panel position a bit
 				sa_variables.right_panel.css('left', peek);
 
